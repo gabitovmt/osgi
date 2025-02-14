@@ -4,20 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>felix</artifactId>
+    <groupId>org.foo</groupId>
+    <artifactId>non-module</artifactId>
     <version>1.0</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>hello</module>
-        <module>hello-client</module>
-        <module>non-module</module>
-    </modules>
+    <name>Paint program</name>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 </project>

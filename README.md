@@ -4,7 +4,8 @@
 
 ## Модули
 
-1. Модули `hello` и `hello-client` связаны с примерами из первой главы книги `OSGi in Action`.
+1. Модули `hello` и `hello-client` связаны с примерами из 1ой главы книги `OSGi in Action`.
+2. Модули `non-module` и `is-module` связаны с примерами из 2ой главы книги `OSGI in Action`.
 
 ## Сборка проекта
 
