@@ -12,6 +12,7 @@
         <module>hello</module>
         <module>hello-client</module>
         <module>non-module</module>
+        <module>is-module-shape</module>
     </modules>
 
     <properties>
