@@ -13,6 +13,11 @@
         <module>hello-client</module>
         <module>non-module</module>
         <module>is-module-shape</module>
+        <module>is-module-paint</module>
+        <module>is-module-circle</module>
+        <module>is-module-square</module>
+        <module>is-module-triangle</module>
+        <module>shell</module>
     </modules>
 
     <properties>
