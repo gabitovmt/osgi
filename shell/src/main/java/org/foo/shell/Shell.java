@@ -1,6 +1,7 @@
 package org.foo.shell;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintStream;
 
 public class Shell implements Runnable {
@@ -18,6 +19,30 @@ public class Shell implements Runnable {
 
     @Override
     public void run() {
-        // TODO
+        while (!Thread.currentThread().isInterrupted()) {
+            out.print("-> ");
+
+            String cmdLine;
+            try {
+                cmdLine = in.readLine();
+            } catch (IOException ex) {
+                if (!Thread.currentThread().isInterrupted()) {
+                    ex.printStackTrace(err);
+                    err.println("Unable to read from stdin - exiting now");
+                }
+                return;
+            }
+
+            if (cmdLine == null) {
+                out.println("Bye bye");
+                return;
+            }
+
+            try {
+                command.exec(cmdLine, out, err);
+            } catch (Exception ex) {
+                ex.printStackTrace(err);
+            }
+        }
     }
 }

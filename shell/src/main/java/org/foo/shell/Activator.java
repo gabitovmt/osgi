@@ -1,5 +1,6 @@
 package org.foo.shell;
 
+import org.foo.shell.commands.HelpCommand;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -53,7 +54,7 @@ public class Activator implements BundleActivator {
     private Command getExecuteCommand(BundleContext context) throws IOException {
         Map<String, Command> commands = new HashMap<>();
 
-        return null;
+        return new HelpCommand();
     }
 
     private Binding getTelnetBinding(BundleContext context, int port, int maxConnections) throws IOException {
