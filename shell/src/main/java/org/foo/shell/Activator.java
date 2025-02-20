@@ -1,7 +1,6 @@
 package org.foo.shell;
 
-import org.foo.shell.commands.ExecuteCommand;
-import org.foo.shell.commands.HelpCommand;
+import org.foo.shell.commands.*;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -54,7 +53,18 @@ public class Activator implements BundleActivator {
 
     private Command getExecuteCommand(BundleContext context) throws IOException {
         Map<String, Command> commands = new HashMap<>();
-        commands.put("help", new HelpCommand(commands).setContext(context).setHelp("help - display commands."));
+        commands.put("help", new HelpCommand(commands).setContext(context)
+                .setHelp("help - display commands."));
+        commands.put("install", new InstallCommand().setContext(context)
+                .setHelp("install <url> - Install the bundle jar at the given url."));
+        commands.put("start", new StartCommand().setContext(context)
+                .setHelp("start <id> - Start the bundle with the given bundle id."));
+        commands.put("stop", new StopCommand().setContext(context)
+                .setHelp("stop <id> - Stop the bundle with the given bundle id."));
+        commands.put("uninstall", new UninstallCommand().setContext(context)
+                .setHelp("uninstall <id> - Uninstall the bundle with the given bundle id."));
+        commands.put("update", new UpdateCommand().setContext(context)
+                .setHelp("update <id> - Update the bundle with the given bundle id."));
 
         return new ExecuteCommand(commands);
     }
