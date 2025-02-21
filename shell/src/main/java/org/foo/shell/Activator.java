@@ -80,7 +80,9 @@ public class Activator implements BundleActivator {
         commands.put("resolve", new ResolveCommand().setContext(context)
                 .setHelp("resolve [<id> ...] - resolve bundles."));
         commands.put("bundles", new BundlesCommand().setContext(context)
-                .setHelp("bundles - Print information about the currently installed bundles"));
+                .setHelp("bundles - Print information about the currently installed bundles."));
+        commands.put("properties", new FrameworkPropertiesCommand().setContext(context)
+                .setHelp("properties - Print standard OSGI framework properties."));
 
         HistoryDecorator historyDecorator = new HistoryDecorator(new ExecuteCommand(commands), readHistory(context));
         context.addFrameworkListener(historyDecorator);
