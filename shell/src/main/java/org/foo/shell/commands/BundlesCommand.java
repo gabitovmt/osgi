@@ -10,7 +10,7 @@ public class BundlesCommand extends BasicCommand {
     @Override
     public void exec(String args, PrintStream out, PrintStream err) throws Exception {
         out.println("ID  |State    |Name");
-        for (Bundle bundle : getContext().getBundles()) {
+        for (Bundle bundle : getBundles()) {
             printBundle(
                     bundle.getBundleId(),
                     getStateString(bundle.getState()),

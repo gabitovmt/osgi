@@ -6,7 +6,7 @@ import org.osgi.framework.BundleContext;
 
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -52,7 +52,7 @@ public class Activator implements BundleActivator {
     }
 
     private Command getExecuteCommand(BundleContext context) throws IOException {
-        Map<String, Command> commands = new HashMap<>();
+        Map<String, Command> commands = new LinkedHashMap<>();
         commands.put("help", new HelpCommand(commands).setContext(context)
                 .setHelp("help - display commands."));
         commands.put("install", new InstallCommand().setContext(context)
@@ -69,6 +69,10 @@ public class Activator implements BundleActivator {
                 .setHelp("startlevel [<level>] - Get or set the framework startlevel."));
         commands.put("bundlelevel", new BundleLevelCommand().setContext(context)
                 .setHelp("bundlelevel [<level>] <id> - Get or set bundle startlevel."));
+        commands.put("refresh", new RefreshCommand().setContext(context)
+                .setHelp("refresh [<id> ...] - refresh bundles."));
+        commands.put("resolve", new ResolveCommand().setContext(context)
+                .setHelp("resolve [<id> ...] - resolve bundles."));
         commands.put("bundles", new BundlesCommand().setContext(context)
                 .setHelp("bundles - Print information about the currently installed bundles"));
 

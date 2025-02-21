@@ -1,7 +1,6 @@
 package org.foo.shell.commands;
 
 import org.osgi.framework.Bundle;
-import org.osgi.framework.startlevel.BundleStartLevel;
 
 import java.io.PrintStream;
 import java.util.StringTokenizer;
@@ -20,9 +19,5 @@ public class BundleLevelCommand extends BasicCommand {
             Bundle bundle = getBundle(tok.nextToken());
             getBundleStartLevel(bundle).setStartLevel(level);
         }
-    }
-
-    private BundleStartLevel getBundleStartLevel(Bundle bundle) {
-        return bundle.adapt(BundleStartLevel.class);
     }
 }
