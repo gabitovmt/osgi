@@ -1,7 +1,6 @@
 package org.foo.shell.commands;
 
 import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleContext;
 import org.osgi.framework.startlevel.BundleStartLevel;
 
 import java.io.PrintStream;
@@ -24,7 +23,6 @@ public class BundleLevelCommand extends BasicCommand {
     }
 
     private BundleStartLevel getBundleStartLevel(Bundle bundle) {
-        BundleContext context = bundle.getBundleContext();
-        return context.getService(context.getServiceReference(BundleStartLevel.class));
+        return bundle.adapt(BundleStartLevel.class);
     }
 }

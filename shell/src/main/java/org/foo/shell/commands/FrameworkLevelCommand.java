@@ -16,6 +16,6 @@ public class FrameworkLevelCommand extends BasicCommand {
     }
 
     private FrameworkStartLevel getFrameworkStartLevel() {
-        return getContext().getService(getContext().getServiceReference(FrameworkStartLevel.class));
+        return getBundle("0").adapt(FrameworkStartLevel.class);
     }
 }

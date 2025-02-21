@@ -40,7 +40,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Import-Package>org.osgi.framework;version="1.10"</Import-Package>
+                        <Import-Package>org.osgi.framework.*</Import-Package>
                         <Export-Package/>
                         <Private-Package>org.foo.shell.*</Private-Package>
                         <Bundle-Activator>org.foo.shell.Activator</Bundle-Activator>
