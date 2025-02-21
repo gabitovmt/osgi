@@ -65,6 +65,12 @@ public class Activator implements BundleActivator {
                 .setHelp("uninstall <id> - Uninstall the bundle with the given bundle id."));
         commands.put("update", new UpdateCommand().setContext(context)
                 .setHelp("update <id> - Update the bundle with the given bundle id."));
+        commands.put("startlevel", new FrameworkLevelCommand().setContext(context)
+                .setHelp("startlevel [<level>] - Get or set the framework startlevel."));
+        commands.put("bundlelevel", new BundleLevelCommand().setContext(context)
+                .setHelp("bundlelevel [<level>] <id> - Get or set bundle startlevel."));
+        commands.put("bundles", new BundlesCommand().setContext(context)
+                .setHelp("bundles - Print information about the currently installed bundles"));
 
         return new ExecuteCommand(commands);
     }
