@@ -87,6 +87,9 @@ public class Activator implements BundleActivator {
         context.addBundleListener(historyDecorator);
         historyRef.set(historyDecorator);
 
+        commands.put("history", new HistoryCommand(historyDecorator).setContext(context)
+                .setHelp("history {<n>} - Show the last commands (up to <n> if present)."));
+
         return historyDecorator;
     }
 
