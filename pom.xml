@@ -18,6 +18,11 @@
         <module>is-module-square</module>
         <module>is-module-triangle</module>
         <module>shell</module>
+        <module>module-shape-3</module>
+        <module>module-circle-3</module>
+        <module>module-square-3</module>
+        <module>module-triangle-3</module>
+        <module>module-paint-3</module>
     </modules>
 
     <properties>
